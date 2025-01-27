@@ -1,3 +1,4 @@
+
 /**
  * [1,2,3,4,5]
  * ["foo","bar","baz","qux","echo"]
@@ -17,7 +18,37 @@
  */
 let numberArray = [1,2,3,4,5];
 let stringArray = ["foo","bar","baz","qux","echo"]
-let result = [];
+result = [].concat(numberArray.map((item) => {
+    if (item == 1) {
+        return "one";
+    } else if (item == 3) {
+        return "three";
+    }
+    else if (item == 5) {
+        return "five";
+    }
+    return item;
+})).concat(stringArray.map((item) => {
+    if (item == "foo") {
+        return "f00";
+    } else if (item == "bar") {
+        return "Bar";
+    }
+    else if (item == "baz") {
+        return "b@z";
+    }
+    else if (item == "qux") {
+        return "quX";
+    }
+    else if (item == "echo") {
+        return "3ch0";
+    }
+    return item;
+}));
+
+result.splice(numberArray.length, 0, "h@ck");
+result.unshift("h@ck");
+result.push("h@ck");
 
 
 //export result

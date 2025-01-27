@@ -11,6 +11,18 @@
 let arr = ["foo","bar","baz","qux","echo"];
 let result = [];
 
+result = arr.filter((item, index) => {
+    return index > 0 && index < 4;
+}
+).map((item, index) => {
+    if (index < 2) {
+        return item.replace("a", "@");
+    } else {
+        return item.toUpperCase();
+    }
+}
+)
+
 
 //export result
 module.exports = result;
